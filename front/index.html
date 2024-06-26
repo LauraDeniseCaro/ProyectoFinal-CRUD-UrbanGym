@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/front/static/css/estilos.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/front/static/img/favicon.ico" />
+
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/e489eed9fa.js" crossorigin="anonymous"></script>
+
+  <!-- Fuente de google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet" />
+
+  <title>URBAN GYM</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <!-- Logo -->
+      <div id="logo" class="logo-container">
+        <a href="/front/index.html">
+          <img class="logo" src="/front/static/img/logo-urban-gym.png" alt="logo URBAN GYM" />
+          <!-- <span class="logo-text">URBAN GYM</span> -->
+        </a>
+      </div>
+      <input type="checkbox" id="check" />
+      <label for="check" class="bar-btn">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+
+      <!-- Hipervínculos del Menú -->
+      <div class="menu">
+        <ul class="nav-links ul_links">
+          <li class="li_links">
+            <a class="links" href="./templates/contacto.html">Contacto</a>
+          </li>
+          <li class="li_links">
+            <a class="links" href="./templates/planes.html">Planes</a>
+          </li>
+          <!-- <li class="li_links">
+            <a class="links" href="/templates/entrenamiento.html">Entrenamiento</a>
+          </li> -->
+          <li class="links li_links">
+            <a href="./templates/clases.html">Clases</a>
+          </li>
+          <li class="li_links">
+            <a class="links btn-login" href="../loginadmin.html">Login Admin</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section id="banner">
+      <div class="banner-text">
+        <h1>URBAN GYM</h1>
+        <h2>Elegí el plan de tu preferencia.</h2>
+        <p>
+          Entrena con nosotros, todos los planes incluyen las áreas de cardio,
+          peso integrado, peso libre, funcional, profesores de piso para
+          evaluaciones y creación de rutinas, vestidores y más.
+        </p>
+        <div class="banner-buttons">
+          <a href="/front/templates/planes.html" class="button1">PLANES</a>
+          <a href="/front/templates/contacto.html" class="button2">CONTACTO</a>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <section id="nosotros">
+      <div class="container">
+        <h2>Nosotros</h2>
+        <p>
+          URBAN GYM es una marca asociada con la actividad física con más de 25 años
+          de experiencia en el mercado. Originada en el barrio de Palermo,
+          Buenos Aires, creamos un servicio en constante crecimiento y
+          evolución atendiendo a las diferentes necesidades de nuestros socios
+          y en contacto con las tendencias mundiales en entrenamiento. Hoy en
+          día contamos con tres sedes que funcionan de manera independiente
+          con servicios específicos en función al publico al que están
+          dirigidos.
+        </p>
+      </div>
+    </section>
+
+    <section id="actividades">
+      <div class="container">
+        <h2>Actividades</h2>
+
+        <div class="slider-box">
+          <ul>
+            <li>
+              <img src="/front/static/img/carrusel/crossgaz.png" alt="ejercicios de crossgaz" />
+              <div class="caption">CrossFit</div>
+            </li>
+            <li>
+              <img src="/front/static/img/carrusel/cycle.png" alt="ejercicios de cycle" />
+              <div class="caption">Indoor Cycle</div>
+            </li>
+            <li>
+              <img src="/front/static/img/carrusel/pilates.png" alt="ejercicios de pilates" />
+              <div class="caption">Pilates</div>
+            </li>
+            <li>
+              <img src="/front/static/img/carrusel/trx.png" alt="ejercios de trx" />
+              <div class="caption">TRX</div>
+            </li>
+            <li>
+              <img src="/front/static/img/carrusel/yoga.png" alt="ejercicios de yoga" />
+              <div class="caption">Yoga</div>
+            </li>
+            <li>
+              <img src="/front/static/img/carrusel/zumba.png" alt="ejercicios de zumba" />
+              <div class="caption">Zumba</div>
+            </li>
+            <!-- Repito img para que no quede un vacio en el slider -->
+            <li>
+              <img src="/front/static/img/carrusel/crossgaz.png" alt="ejercicios de crossgaz" />
+              <div class="caption">CrossFit</div>
+            </li>
+            <li>
+              <img src="/front/static/img/carrusel/cycle.png" alt="ejercicios de cycle" />
+              <div class="caption">Indoor Cycle</div>
+            </li>
+            <li>
+              <img src="/front/static/img/carrusel/pilates.png" alt="ejercicios de pilates" />
+              <div class="caption">Pilates</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="ubicacion">
+      <div class="container">
+        <h2>Ubicacion</h2>
+        <div class="ubicacion">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0167125041007!2d-58.3815704!3d-34.603738899999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4aa9f0a6da5edb%3A0x11bead4e234e558b!2sObelisco!5e0!3m2!1ses-419!2sar!4v1713283678714!5m2!1ses-419!2sar"
+            width="100%" height="450" style="border: 0" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="grupo-1">
+      <div class="box">
+        <figure class="logo-container">
+          <a href="/front/index.html">
+            <img src="/front/static/img/logo-urban-gym.png" alt="logo URBAN GYM" />
+          </a>
+        </figure>
+      </div>
+      <div class="box">
+        <h2>SOBRE NOSOTROS</h2>
+        <p>
+          URBAN GYM es una marca asociada con la actividad física con más de 25 años
+          de experiencia en el mercado.
+        </p>
+        <p>Originada en el barrio de Palermo, Buenos Aires</p>
+      </div>
+      <div class="box">
+        <h2>SIGUENOS</h2>
+        <div class="red-social">
+          <a href="#" class="fa-brands fa-facebook"></a>
+          <a href="#" class="fa-brands fa-instagram"></a>
+          <a href="#" class="fa-brands fa-youtube"></a>
+          <a href="#" class="fa-brands fa-x-twitter"></a>
+        </div>
+      </div>
+    </div>
+    <div class="grupo-2">
+      <small>&copy;2024 <b>GymGym</b>Todos los derechos Reservados.</small>
+    </div>
+  </footer>
+</body>
+
+</html>

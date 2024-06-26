@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Fonts -->
+  
+    <!-- CSS -->
+    <link rel="stylesheet" href="./front/static/css/estilos.css" />
+  
+    <!-- Favicon -->
+    <link rel="icon" href="/static/imagenes/logos/favicon.ico" />
+  
+    <!-- Fontawesome -->
+    <script src="https://kit.fontawesome.com/e489eed9fa.js" crossorigin="anonymous"></script>
+  
+    <!-- Fuente de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet" />
+  
+    <title>Login</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <nav class="navbar">
+        <!-- Logo -->
+        <div id="logo" class="logo-container">
+            <a href="./front/index.html">
+                <img class="logo" src="./static/imagenes/logos/logo-urban-gym.png" alt="logo URBAN GYM" />
+                <!-- <span class="logo-text">URBAN GYM</span> -->
+            </a>
+        </div>
+        <input type="checkbox" id="check" />
+        <label for="check" class="bar-btn">
+            <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <!-- Hipervínculos del Menú -->
+        <div class="menu">
+            <ul class="nav-links ul_links">
+                <li class="li_links">
+                    <a class="links" href="./front/templates/contacto.html">Contacto</a>
+                </li>
+                <li class="li_links">
+                    <a class="links" href="./front/templates/planes.html">Planes</a>
+                </li>
+                <!-- <li class="li_links">
+                  <a class="links" href="/templates/entrenamiento.html">Entrenamiento</a>
+                </li> -->
+                <li class="links li_links">
+                    <a href="./front/templates/clases.html">Clases</a>
+                </li>
+                <li class="li_links">
+                    <a class="links btn-login" href="./loginadmin.html">Login Admin</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  
+    </header>
+
+    <main class="contenedor-form">
+      <div class="login">
+        <form action="" method="POST" id="form">
+            <div class="form">
+                <h1 class="login-title">Login</h1>
+                <div class="grupo">
+                    <input type="text" name="usuario" id="usuario" ><span class="barra"></span>
+                    <label for="usuario">Usuario</label>
+                </div>
+
+                <div class="grupo">
+                    <input type="password" name="password" id="password" ><span class="barra"></span>
+                    <label for="password">Password</label>
+                </div>
+            
+                <button class="button3" type="submit">Ingresar</button>
+            </div>
+       </form>
+      </div>
+    </main>
+
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure class="logo-container">
+            <a href="/front/index.html">
+              <img src="./static/imagenes/logos/logo-urban-gym.png" alt="logo URBAN GYM" />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>SOBRE NOSOTROS</h2>
+          <p>
+            URBAN GYM es una marca asociada con la actividad física con más de 25 años
+            de experiencia en el mercado.
+          </p>
+          <p>Originada en el barrio de Palermo, Buenos Aires</p>
+        </div>
+        <div class="box">
+          <h2>SIGUENOS</h2>
+          <div class="red-social">
+            <a href="#" class="fa-brands fa-facebook"></a>
+            <a href="#" class="fa-brands fa-instagram"></a>
+            <a href="#" class="fa-brands fa-youtube"></a>
+            <a href="#" class="fa-brands fa-x-twitter"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small>&copy;2024 <b>GymGym</b>Todos los derechos Reservados.</small>
+      </div>
+    </footer>
+
+    <script>
+        document.getElementById("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Evita el envío del formulario por defecto
+            
+            // Obtiene los valores del usuario y contraseña
+            let usuario = document.getElementById("usuario").value;
+            let password = document.getElementById("password").value;
+            
+            // Verifica las credenciales (en este caso, usuario = "admin" y password = "admin")
+            if (usuario === "admin" && password === "admin") {
+                // Redirige a la página deseada
+                window.location.href = "./index.html";
+            } else {
+                // Muestra un mensaje de error si las credenciales son incorrectas
+                alert("Usuario o contraseña incorrectos");
+            }
+        });
+        </script>
+  </body>
+</html>

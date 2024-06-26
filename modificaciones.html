@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./static/css/estilo.css" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="./static/imagenes/logos/favicon.ico" />
+
+    <!-- Fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/e489eed9fa.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Fuente de google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Modificar Consultas</title>
+    <link rel="stylesheet" href="./static/css/estilo.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <!-- Logo -->
+        <div id="logo" class="logo-container">
+          <a href="./front/index.html">
+            <img
+              class="logo"
+              src="./static/imagenes/logos/logo-urban-gym.png"
+              alt="logo URBAN GYM"
+            />
+            <!-- <span class="logo-text">URBAN GYM</span> -->
+          </a>
+        </div>
+        <input type="checkbox" id="check" />
+        <label for="check" class="bar-btn">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+
+        <!-- Hipervínculos del Menú -->
+        <div class="menu">
+          <ul class="nav-links ul_links">
+            <li class="li_links">
+              <a class="links" href="./front/templates/contacto.html"
+                >Contacto</a
+              >
+            </li>
+            <li class="li_links">
+              <a class="links" href="./front/templates/planes.html">Planes</a>
+            </li>
+            <!-- <li class="li_links">
+                          <a class="links" href="/templates/entrenamiento.html">Entrenamiento</a>
+                        </li> -->
+            <li class="links li_links">
+              <a href="./front/templates/clases.html">Clases</a>
+            </li>
+            <li class="li_links">
+              <a class="links btn-login" href="./loginadmin.html"
+                >Login Admin</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <div class="gestion-consultas">
+      <h1>Modificar Consultas</h1>
+      <br />
+
+      <!-- Contenedor principal que será controlado por JavaScript. Este contenedor tendrá dos formularios. -->
+      <div id="app">
+        <!-- Primer formulario: Selector de producto. LLama a la función obtenerProducto cuando se envíe el formulario -->
+        <form id="form-obtener-producto">
+          <label for="codigo">Código:</label>
+          <input type="text" id="codigo" required /><br />
+          <button type="submit">Modificar Consulta</button>
+          <a href="index.html">Menu principal</a>
+        </form>
+
+        <!-- Segundo formulario: se muestra solo si mostrarDatosProducto/nosotros ponemos DatosConsulta/ es verdadero. Llama a la función guardarCambios -->
+        <div id="datos-consulta" style="display: none">
+          <h2>Datos de la Consulta</h2>
+          <form id="form-guardar-cambios">
+            <label for="nombreModificar">Nombre:</label>
+            <input type="text" id="nombreModificar" required /><br />
+
+            <label for="emailModificar">E-mail:</label>
+            <input type="email" id="emailModificar" required /><br />
+
+            <label for="turnoModificar">Turno:</label>
+            <input type="text" id="turnoModificar" required /><br />
+
+            <!-- Imagen actual del producto - Debe comentarse al subirse al servidor-->
+            <img id="imagen-actual" style="max-width: 200px; display: none" />
+
+            <!-- Vista previa de la nueva imagen seleccionada -->
+            <img
+              id="imagen-vista-previa"
+              style="max-width: 200px; display: none"
+            />
+
+            <!-- Input para nueva imagen -->
+            <label for="nuevaImagen">Nueva Imagen:</label>
+            <input type="file" id="nuevaImagen" /><br />
+
+            <br />
+            <label for="asuntoModificar">Asunto:</label>
+            <input type="text" id="asuntoModificar" required /><br />
+
+            <br /><br />
+            <label for="mensajeModificar">Mensaje:</label>
+            <textarea id="mensajeModificar" name="mensajeModificar"></textarea>
+
+            <button type="submit">Guardar Cambios</button>
+            <a href="modificaciones.html">Cancelar</a>
+          </form>
+        </div>
+      </div>
+    </div>
+    <footer class="pie-pagina">
+      <div class="grupo-1">
+        <div class="box">
+          <figure class="logo-container">
+            <a href="./front/index.html">
+              <img
+                src="./static/imagenes/logos/logo-urban-gym.png"
+                alt="logo URBAN GYM"
+              />
+            </a>
+          </figure>
+        </div>
+        <div class="box">
+          <h2>SOBRE NOSOTROS</h2>
+          <p>
+            URBAN GYM es una marca asociada con la actividad física con más de
+            25 años de experiencia en el mercado.
+          </p>
+          <p>Originada en el barrio de Palermo, Buenos Aires</p>
+        </div>
+        <div class="box">
+          <h2>SIGUENOS</h2>
+          <div class="red-social">
+            <a href="#" class="fa-brands fa-facebook"></a>
+            <a href="#" class="fa-brands fa-instagram"></a>
+            <a href="#" class="fa-brands fa-youtube"></a>
+            <a href="#" class="fa-brands fa-x-twitter"></a>
+          </div>
+        </div>
+      </div>
+      <div class="grupo-2">
+        <small>&copy;2024 <b>GymGym</b>Todos los derechos Reservados.</small>
+      </div>
+    </footer>
+
+    <script>
+      // const URL = "http://127.0.0.1:5000/";
+
+      //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+      const URL = "https://lauradenisecar.pythonanywhere.com/"
+
+      // Variables de estado para controlar la visibilidad y los datos del formulario
+      let codigo = "";
+      let nombre = "";
+      let email = "";
+      let turno = "";
+      let asunto = "";
+      let mensaje = "";
+      let imagen_url = "";
+      let imagenSeleccionada = null;
+      let imagenUrlTemp = null;
+      let mostrarDatosConsulta = false;
+
+      document
+        .getElementById("form-obtener-producto")
+        .addEventListener("submit", obtenerConsulta);
+      document
+        .getElementById("form-guardar-cambios")
+        .addEventListener("submit", guardarCambios);
+      document
+        .getElementById("nuevaImagen")
+        .addEventListener("change", seleccionarImagen);
+
+      // Se ejecuta cuando se envía el formulario de consulta. Realiza una solicitud GET a la API y obtiene los datos del producto correspondiente al código ingresado.
+      function obtenerConsulta(event) {
+        event.preventDefault();
+        codigo = document.getElementById("codigo").value;
+        fetch(URL + "/clientes/" + codigo)
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error("Error al obtener los datos de la consulta.");
+            }
+          })
+          .then((data) => {
+            nombre = data.nombre;
+            email = data.email;
+            turno = data.turno;
+            imagen_url = data.imagen_url;
+            asunto = data.asunto;
+            mensaje = data.mensaje;
+            mostrarDatosConsulta = true; //Activa la vista del segundo formulario
+            mostrarFormulario();
+          })
+          .catch((error) => {
+            alert("Código no encontrado.");
+          });
+      }
+
+      // Muestra el formulario con los datos del producto
+      function mostrarFormulario() {
+        if (mostrarDatosConsulta) {
+          document.getElementById("nombreModificar").value = nombre;
+          document.getElementById("emailModificar").value = email;
+          document.getElementById("turnoModificar").value = turno;
+          document.getElementById("asuntoModificar").value = asunto;
+          document.getElementById("mensajeModificar").value = mensaje;
+
+          const imagenActual = document.getElementById("imagen-actual");
+          if (imagen_url && !imagenSeleccionada) {
+            // Verifica si imagen_url no está vacía y no se ha seleccionado una imagen
+
+            // imagenActual.src = "./static/imagenes/" + imagen_url;
+
+            //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+            imagenActual.src = 'https://www.pythonanywhere.com/user/lauradenisecar/files/home/lauradenisecar/mysite/static/imagenes/' + imagen_url;
+
+            imagenActual.style.display = "block"; // Muestra la imagen actual
+          } else {
+            imagenActual.style.display = "none"; // Oculta la imagen si no hay URL
+          }
+
+          document.getElementById("datos-consulta").style.display = "block";
+        } else {
+          document.getElementById("datos-consulta").style.display = "none";
+        }
+      }
+
+      // Se activa cuando el usuario selecciona una imagen para cargar.
+      function seleccionarImagen(event) {
+        const file = event.target.files[0];
+        imagenSeleccionada = file;
+        imagenUrlTemp = URL.createObjectURL(file); // Crea una URL temporal para la vista previa
+
+        const imagenVistaPrevia = document.getElementById(
+          "imagen-vista-previa"
+        );
+        imagenVistaPrevia.src = imagenUrlTemp;
+        imagenVistaPrevia.style.display = "block";
+      }
+
+      // Se usa para enviar los datos modificados del producto al servidor.
+      function guardarCambios(event) {
+        event.preventDefault();
+
+        const formData = new FormData();
+        formData.append("codigo", codigo);
+        formData.append(
+          "nombre",
+          document.getElementById("nombreModificar").value
+        );
+        formData.append(
+          "email",
+          document.getElementById("emailModificar").value
+        );
+        formData.append(
+          "turno",
+          document.getElementById("turnoModificar").value
+        );
+        formData.append(
+          "asunto",
+          document.getElementById("asuntoModificar").value
+        );
+        formData.append(
+          "mensaje",
+          document.getElementById("mensajeModificar").value
+        );
+
+        // Si se ha seleccionado una imagen nueva, la añade al formData.
+        if (imagenSeleccionada) {
+          formData.append(
+            "imagen",
+            imagenSeleccionada,
+            imagenSeleccionada.name
+          );
+        }
+
+        fetch(URL + "/clientes/" + codigo, {
+          method: "PUT",
+          body: formData,
+        })
+          .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error("Error al guardar los cambios de la consulta.");
+            }
+          })
+          .then((data) => {
+            alert("Consulta actualizada correctamente.");
+            limpiarFormulario();
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            alert("Error al actualizar la consulta.");
+          });
+      }
+
+      // Restablece todas las variables relacionadas con el formulario a sus valores iniciales, lo que efectivamente "limpia" el formulario.
+      function limpiarFormulario() {
+        document.getElementById("codigo").value = "";
+        document.getElementById("nombreModificar").value = "";
+        document.getElementById("emailModificar").value = "";
+        document.getElementById("turnoModificar").value = "";
+        document.getElementById("asuntoModificar").value = "";
+        document.getElementById("mensajeModificar").value = "";
+        document.getElementById("nuevaImagen").value = "";
+
+        const imagenActual = document.getElementById("imagen-actual");
+        imagenActual.style.display = "none";
+
+        const imagenVistaPrevia = document.getElementById(
+          "imagen-vista-previa"
+        );
+        imagenVistaPrevia.style.display = "none";
+
+        codigo = "";
+        nombre = "";
+        email = "";
+        turno = "";
+        asunto = "";
+        mensaje = "";
+        imagen_url = "";
+        imagenSeleccionada = null;
+        imagenUrlTemp = null;
+        mostrarDatosConsulta = false;
+
+        document.getElementById("datos-consulta").style.display = "none";
+      }
+    </script>
+  </body>
+</html>

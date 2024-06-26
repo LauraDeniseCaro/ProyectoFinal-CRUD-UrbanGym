@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Google Fonts -->
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/front/static/css/estilos.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/front/static/img/favicon.ico" />
+
+  <!-- Fontawesome -->
+  <script src="https://kit.fontawesome.com/e489eed9fa.js" crossorigin="anonymous"></script>
+
+  <!-- Fuente de google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+    rel="stylesheet" />
+ 
+  <!-- Agregamos la biblioteca de SweetAlert  para personalizar la ventana emergente-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <title>Contacto</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="navbar">
+      <!-- Logo -->
+      <div id="logo" class="logo-container">
+        <a href="/front/index.html">
+          <img class="logo" src="/front/static/img/logo-urban-gym.png" alt="logo URBAN GYM" />
+          <!-- <span class="logo-text">URBAN GYM</span> -->
+        </a>
+      </div>
+      <input type="checkbox" id="check" />
+      <label for="check" class="bar-btn">
+        <i class="fa-solid fa-bars"></i>
+      </label>
+
+      <!-- Hipervínculos del Menú -->
+      <div class="menu">
+        <ul class="nav-links ul_links">
+          <li class="li_links">
+            <a class="links" href="/front/templates/contacto.html">Contacto</a>
+          </li>
+          <li class="li_links">
+            <a class="links" href="/front/templates/planes.html">Planes</a>
+          </li>
+          <!-- <li class="li_links">
+            <a class="links" href="/templates/entrenamiento.html">Entrenamiento</a>
+          </li> -->
+          <li class="links li_links">
+            <a href="/front/templates/clases.html">Clases</a>
+          </li>
+          <li class="li_links">
+            <a class="links btn-login" href="/loginadmin.html">Login Admin</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <main class="container-contacto">
+    <section id="contacto" class="section-form">
+      <!-- Aca tendriamos que armar un form  -->
+      <!-- Tiene que tener 5 campos
+        *checkbox (por ejemplo Acepto la Política de privacidad) OK
+        *un select OK
+        *una imagen OK
+        *validacion para que los campos sean obligatorios con js OK -->
+      <div class="container-form">
+        <div class="info-form">
+          <h2>¡Hola!</h2>
+          <p>Déjanos tus datos y cuéntanos tu inquietud. Te daremos respuesta a la brevedad posible.</p>
+          <a href="#"><i class="fa fa-phone"></i>(011)15123456789</a>
+          <br>
+          <a href="#"><i class="fa fa-envelope"></i>contacto@urban-gym.com</a>
+          <br>
+          <a href="#"><i class="fa fa-map-marked"></i>CABA, Argentina</a>
+          <br>
+        </div>
+
+        <form id="formulario" enctype="multipart/form-data">
+          <div class="form">
+
+            <div class="campo">
+              <label for="nombre">Nombre y Apellido:</label>
+              <input type="text" name="nombre" class="campo" id="nombre" required>
+              <div class="error-message" id="nombre-error"></div>
+            </div>
+
+            <div class="campo">
+              <label for="email">E-mail:</label>
+              <input type="email" name="email" class="campo" id="email" required>
+              <div class="error-message" id="email-error"></div>
+            </div>
+            <div class="campo">
+              <!-- <label for="opcion-select">¿Cuál es tu horario de preferencia para entrenar?</label> -->
+              <!-- <select name="opcion" id="opcion-select">
+                <option value="">--Selecciona una opción:--</option>
+                <option value="maniana">Mañana</option>
+                <option value="tarde">Tarde</option>
+                <option value="noche">Noche</option>
+              </select> -->
+              <label for="turno">Turno de preferencia (Mañana/Tarde/Noche):</label>
+              <input type="text" id="turno" name="turno" class="campo" required><br>
+              <div class="error-message" id="opcion-error"></div>
+            </div>
+        
+            <div class="campo">
+              <h4>VERIFICACIÓN DE IDENTIDAD</h4>
+              <p>Por favor, sube una foto legible de tu DNI para verificar tu identidad:</p>
+              <label for="imagendni" class="label-file">SUBIR FOTO DEL DNI</label>
+              <input class="input-file" type="file" id="imagendni" name="imagen" required>
+              <div class="error-message" id="foto-error"></div>
+            </div>
+        
+            <div class="campo">
+              <label for="asunto">Asunto:</label>
+              <input type="text" name="asunto" class="campo" id="asunto" required>
+              <div class="error-message" id="asunto-error"></div>
+            </div>
+            <div class="campo">
+              <label for="mensaje">Mensaje:</label>
+              <textarea name="mensaje" rows="10" cols="30" required></textarea>
+              <div class="error-message" id="mensaje-error"></div>
+            </div>
+            <!-- <div class="campo">
+              <input type="checkbox" name="acepto" id="acepto">
+              <label for="acepto">Acepto la Política de privacidad</label>
+              <div class="error-message" id="acepto-error"></div>
+            </div> -->
+            <div class="campo">
+              <button type="submit" class="button4">Enviar</button>
+              <!-- <input id="enviarBtn" onclick="enviarFormulario()" class="button4" type="button" value="Enviar"> -->
+            </div>
+          </div>
+        </form>
+
+
+
+
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie-pagina">
+    <div class="grupo-1">
+      <div class="box">
+        <figure class="logo-container">
+          <a href="/front/index.html">
+            <img src="/front/static/img/logo-urban-gym.png" alt="logo URBAN GYM" />
+          </a>
+        </figure>
+      </div>
+      <div class="box">
+        <h2>SOBRE NOSOTROS</h2>
+        <p>
+          URBAN GYM es una marca asociada con la actividad física con más de 25 años
+          de experiencia en el mercado.
+        </p>
+        <p>Originada en el barrio de Palermo, Buenos Aires</p>
+      </div>
+      <div class="box">
+        <h2>SIGUENOS</h2>
+        <div class="red-social">
+          <a href="#" class="fa-brands fa-facebook"></a>
+          <a href="#" class="fa-brands fa-instagram"></a>
+          <a href="#" class="fa-brands fa-youtube"></a>
+          <a href="#" class="fa-brands fa-x-twitter"></a>
+        </div>
+      </div>
+    </div>
+    <div class="grupo-2">
+      <small>&copy;2024 <b>GymGym</b>Todos los derechos Reservados.</small>
+    </div>
+  </footer>
+
+
+  <!-- <script src="/js/script.js"></script> -->
+
+  <script>
+    // const URL = "http://127.0.0.1:5000/"
+
+    //Al subir al servidor, deberá utilizarse la siguiente ruta. USUARIO debe ser reemplazado por el nombre de usuario de Pythonanywhere
+    const URL = "https://lauradenisecar.pythonanywhere.com/"
+    
+
+    // Capturamos el evento de envío del formulario
+    document.getElementById('formulario').addEventListener('submit', function (event) {
+        event.preventDefault(); // Evitamos que se envie el form 
+
+        var formData = new FormData(this);
+
+        // Realizamos la solicitud POST al servidor
+        fetch(URL + 'clientes', {
+            method: 'POST',
+            body: formData // Aquí enviamos formData. Dado que formData puede contener archivos, no se utiliza JSON.
+        })
+
+        //Después de realizar la solicitud POST, se utiliza el método then() para manejar la respuesta del servidor.
+        .then(function (response) {
+                if (response.ok) { 
+                    //Si la respuesta es exitosa, convierte los datos de la respuesta a formato JSON.
+                    return response.json(); 
+                } else {
+                    // Si hubo un error, lanzar explícitamente una excepción
+                    // para ser "catcheada" más adelante
+                    throw new Error('Error al agregar la consulta.');
+                }
+        })
+
+            //Respuesta OK, muestra una alerta informando que el producto se agregó correctamente y limpia los campos del formulario para que puedan ser utilizados para un nuevo producto.
+            .then(function (data) {
+                alert('GRACIAS POR CONTACTARNOS! Su consulta fue enviada exitosamente, a la brevedad recibira un respuesta a su e-mail.');
+            })
+
+            // En caso de error, mostramos una alerta con un mensaje de error.
+            .catch(function (error) {
+                alert('Error al agregar su consulta.');
+            })
+
+            // Limpiar el formulario en ambos casos (éxito o error)
+            .finally(function () {
+                document.getElementById('nombre').value = "";
+                document.getElementById('email').value = "";
+                document.getElementById('turno').value = "";
+                document.getElementById('imagendni').value = "";
+                document.getElementById('asunto').value = "";
+                document.getElementById('mensaje').value = "";
+
+            });
+    })
+</script>
+
+</body>
+
+
+</html>
